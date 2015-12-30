@@ -97,3 +97,5 @@ let g:neocomplcache_dictionary_filetype_lists = {
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
+" 隠しファイルをデフォルトで表示
+let NERDTreeShowHidden =1
