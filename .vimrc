@@ -9,6 +9,7 @@ set title "編集中のファイル名表示
 syntax on "コードの色分け
 set list "不可視文字の可視化
 set number "行番号の表示
+set textwidth=80
 set wrap "長いテキストの折り返し
 set showmatch "対応するカッコなどをハイライト表示
 
@@ -26,6 +27,11 @@ set infercase "補完時に大文字小文字を区別しない
 set clipboard=unnamed "クリップボードをWindowsと連携
 set smarttab "新しい行を作った時に高度な自動インデントを行う
 set hidden "変更中のファイルでも保存せずに他のファイルを表示
+
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 
 " #####検索関連#####
 set ignorecase "大文字小文字の区別なく検索
@@ -64,6 +70,7 @@ NeoBundle "davidhalter/jedi-vim"
 NeoBundle "thinca/vim-quickrun"
 NeoBundle "b4b4r07/vim-shellutils"
 NeoBundle "scrooloose/nerdtree"
+NeoBundle "Yggdroot/indentLine"
 
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
