@@ -4,14 +4,19 @@ scriptencoding utf-8
 " vi互換モードをオフ(Vimの拡張機能を有効化)
 set nocompatible
 
+
 " #####表示設定#####
 set title "編集中のファイル名表示
 syntax on "コードの色分け
 set list "不可視文字の可視化
 set number "行番号の表示
-set textwidth=80
 set wrap "長いテキストの折り返し
 set showmatch "対応するカッコなどをハイライト表示
+
+"日本語入力ON時のカーソルの色を設定
+if has('multi_byte_ime') || has('xim')
+    highlight CursorIM guibg=Orange guifg=NONE
+endif
 
 " #####入力関連#####
 set expandtab "タブ入力を複数の空白入力に置き換える
@@ -21,6 +26,9 @@ set softtabstop=4 "連続した空白に対してタブキーやバックスペ�
 set smartindent "オートインデント
 set virtualedit=all "カーソルを文字が無い部分でも動けるように
 set backspace=indent,eol,start "バックスペースで消せるように
+set switchbuf=useopen "新しく開く代わりにすでに開いているバッファを開く
+set textwidth=0 "自動的に改行が入るのを無効化
+set colorcolumn=80 "80文字列目にラインを入れる
 
 set wildmenu "コマンドライン補完を便利に
 set infercase "補完時に大文字小文字を区別しない
@@ -28,6 +36,7 @@ set clipboard=unnamed "クリップボードをWindowsと連携
 set smarttab "新しい行を作った時に高度な自動インデントを行う
 set hidden "変更中のファイルでも保存せずに他のファイルを表示
 
+"論理行と物理行の移動操作を入れ替え 
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
@@ -38,6 +47,13 @@ set ignorecase "大文字小文字の区別なく検索
 set incsearch "インクリメンタルサーチ
 set hlsearch "検索マッチテキストをハイライト
 set wrapscan "検索時に最後までいったら最初に戻る
+"検索後にジャンプした際にカーソルを画面中央に持ってくる
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
 
 set backupdir=C:\Users\Arae\vimbackupfiles
 set noundofile
@@ -71,6 +87,7 @@ NeoBundle "thinca/vim-quickrun"
 NeoBundle "b4b4r07/vim-shellutils"
 NeoBundle "scrooloose/nerdtree"
 NeoBundle "Yggdroot/indentLine"
+NeoBundle "w0ng/vim-hybrid"
 
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
