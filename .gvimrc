@@ -45,6 +45,14 @@ nnoremap s> <C-w>> "幅を増やす
 nnoremap s< <C-w>< "幅を減らす
 nnoremap s+ <C-w>+ "高さを増やす
 nnoremap s- <C-w>- "高さを減らす
+"vim-submode設定
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+call submode#map('bufmove', 'n', '', '<', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 
 
 "日本語入力ON時のカーソルの色を設定

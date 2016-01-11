@@ -4,7 +4,6 @@ scriptencoding utf-8
 " vi互換モードをオフ(Vimの拡張機能を有効化)
 set nocompatible
 
-
 " #####表示設定#####
 set title "編集中のファイル名表示
 syntax on "コードの色分け
@@ -88,6 +87,7 @@ NeoBundle "b4b4r07/vim-shellutils"
 NeoBundle "scrooloose/nerdtree"
 NeoBundle "Yggdroot/indentLine"
 NeoBundle "w0ng/vim-hybrid"
+NeoBundle "kana/vim-submode"
 
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
